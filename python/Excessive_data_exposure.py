@@ -1,3 +1,7 @@
+from flask import Flask
+
+app = Flask(__name__)
+
 def get_user_data(user_id):
     # retrieve user data from database
     user = User.objects.get(id=user_id)
@@ -7,4 +11,3 @@ def get_user_data(user_id):
 def expose_user_data(user_id):
     user_data = get_user_data(user_id)
     return user_data
-  
